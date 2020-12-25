@@ -53,10 +53,10 @@ namespace Triangulator.CLI
             { "minheight",          "A floating point value of minimum possible height for the\n                    triangulated mesh. Maximum value will be applied to\n                    black pixels (if any).\n                    Default value is \"0\" meters." },
             { "offsetx",            "A floating point value of an offset by X-axis for the\n                    triangulated mesh.\n                    Default value is \"0\" (zero) meters." },
             { "offsetz",            "A floating point value of an offset by Z-axis for the\n                    triangulated mesh.\n                    Default value is \"0\" (zero) meters." },
-            { "output",             "A path to the output file. If there is going to be\n                    muplitple outut files, the name will be automatically\n                    modified to fit the template."},
+            { "output",             "A path to the output file. If there is going to be\n                    multiple output files, the name will be automatically\n                    modified to fit the template."},
             { "scalex",             "A positive floating point value of a pixel size on X-axis\n                    in the output mesh.\n                    Default value is \"1\" meter." },
             { "scalez",             "A positive floating point value of a pixel size on Z-axis\n                    in the output mesh.\n                    Default value is \"1\" meter." },
-            { "split",              "An image split type.\n                    Possible values are \"Pixel\" and \"Piece\".\n                    Default value is \"Pixel\"."},
+            { "split",              "An image split type.\n                    Possible values are \"Pixel\" and \"Piece\".\n                    Default value is \"Piece\"."},
             { "splitx",             "A positive integer number of horizontal units for\n                    image splitting.\n                    The value is required for the \"Split\" mode."},
             { "splity",             "A positive integer number of vertical units for\n                    image splitting.\n                    The value is required for the \"Split\" mode."}
         };
