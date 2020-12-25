@@ -33,10 +33,18 @@ To publish the code you always have to specify the target framework since `dotne
 #### CLI
 Please see the CLI section of building the code under Windows.
 
-#### Dependencies
+### Dependencies
+#### Windows
 ##### ImageBox
 Triangulator depends on [ImageBox](https://github.com/americusmaximus/ImageBox) for image manipulation like rotation, flipping, splitting, etc.
- 
+
+##### WaterWave
+Triangulator depends on [WaterWave](https://github.com/americusmaximus/WaterWave) for creation of .obj files.
+
+#### Linux
+##### ImageBox
+Triangulator depends on [ImageBox](https://github.com/americusmaximus/ImageBox) for image manipulation like rotation, flipping, splitting, etc.
+
 ##### WaterWave
 Triangulator depends on [WaterWave](https://github.com/americusmaximus/WaterWave) for creation of .obj files.
 
