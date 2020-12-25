@@ -122,8 +122,6 @@ A positive integer number of horizontal units for image splitting. The value is 
 A positive integer number of vertical units for image splitting. The value is required for the "Split" mode.
 
 #### Example
-The following command line produces an image shown below.
-
 >Triangulator.CLI.exe image=input.png output=hm.obj
 
 #### UI
