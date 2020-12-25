@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageBox", "ImageBox\ImageBox.csproj", "{EA7CBA97-925A-4DDB-BBCD-8D9FE79B3793}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangulator", "Triangulator\Triangulator.csproj", "{E6776001-0CA8-4EF6-B2B7-07496D002403}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WaterWave", "WaterWave\WaterWave.csproj", "{C24FFF61-0AF6-4A32-83FD-A560D37F4B5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA7CBA97-925A-4DDB-BBCD-8D9FE79B3793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7CBA97-925A-4DDB-BBCD-8D9FE79B3793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7CBA97-925A-4DDB-BBCD-8D9FE79B3793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7CBA97-925A-4DDB-BBCD-8D9FE79B3793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6776001-0CA8-4EF6-B2B7-07496D002403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6776001-0CA8-4EF6-B2B7-07496D002403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6776001-0CA8-4EF6-B2B7-07496D002403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6776001-0CA8-4EF6-B2B7-07496D002403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24FFF61-0AF6-4A32-83FD-A560D37F4B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24FFF61-0AF6-4A32-83FD-A560D37F4B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24FFF61-0AF6-4A32-83FD-A560D37F4B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24FFF61-0AF6-4A32-83FD-A560D37F4B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72D90DA3-404D-49FA-9D18-45801F6BA3BA}
+	EndGlobalSection
+EndGlobal
