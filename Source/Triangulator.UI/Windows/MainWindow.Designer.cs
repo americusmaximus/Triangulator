@@ -80,6 +80,8 @@ namespace Triangulator.UI.Windows
             this.OffsetXNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.OffsetXLabel = new System.Windows.Forms.Label();
             this.RotationGroupBox = new System.Windows.Forms.GroupBox();
+            this.FillColorLabel = new System.Windows.Forms.Label();
+            this.FillColorPictureBox = new System.Windows.Forms.PictureBox();
             this.AngleDegreeLabel = new System.Windows.Forms.Label();
             this.FlipComboBox = new System.Windows.Forms.ComboBox();
             this.FlipLabel = new System.Windows.Forms.Label();
@@ -143,8 +145,7 @@ namespace Triangulator.UI.Windows
             this.ObjSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ImageSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.MainColorDialog = new System.Windows.Forms.ColorDialog();
-            this.FillColorLabel = new System.Windows.Forms.Label();
-            this.FillColorPictureBox = new System.Windows.Forms.PictureBox();
+            this.SplitLabel = new System.Windows.Forms.Label();
             this.TriangulatorMenuStrip.SuspendLayout();
             this.MainStatusStrip.SuspendLayout();
             this.ConfigurationTabControl.SuspendLayout();
@@ -162,6 +163,7 @@ namespace Triangulator.UI.Windows
             ((System.ComponentModel.ISupportInitialize)(this.OffsetZNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OffsetXNumericUpDown)).BeginInit();
             this.RotationGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FillColorPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AngleNumericUpDown)).BeginInit();
             this.ColorsGoupBox.SuspendLayout();
             this.StatisticsTabPage.SuspendLayout();
@@ -180,7 +182,6 @@ namespace Triangulator.UI.Windows
             this.PreviewImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PreviewImagePictureBox)).BeginInit();
             this.PreviewImageToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FillColorPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // TriangulatorMenuStrip
@@ -360,13 +361,14 @@ namespace Triangulator.UI.Windows
             // 
             // SplitGroupBox
             // 
+            this.SplitGroupBox.Controls.Add(this.SplitLabel);
             this.SplitGroupBox.Controls.Add(this.SplitYNumericUpDown);
             this.SplitGroupBox.Controls.Add(this.SplitComboBox);
             this.SplitGroupBox.Controls.Add(this.SplitYLabel);
             this.SplitGroupBox.Controls.Add(this.SplitXNumericUpDown);
             this.SplitGroupBox.Controls.Add(this.SplitXLabel);
             this.SplitGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SplitGroupBox.Location = new System.Drawing.Point(3, 397);
+            this.SplitGroupBox.Location = new System.Drawing.Point(3, 389);
             this.SplitGroupBox.Name = "SplitGroupBox";
             this.SplitGroupBox.Size = new System.Drawing.Size(246, 104);
             this.SplitGroupBox.TabIndex = 2;
@@ -401,7 +403,7 @@ namespace Triangulator.UI.Windows
             // 
             this.SplitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SplitComboBox.FormattingEnabled = true;
-            this.SplitComboBox.Location = new System.Drawing.Point(9, 19);
+            this.SplitComboBox.Location = new System.Drawing.Point(119, 19);
             this.SplitComboBox.Name = "SplitComboBox";
             this.SplitComboBox.Size = new System.Drawing.Size(121, 21);
             this.SplitComboBox.TabIndex = 0;
@@ -458,7 +460,7 @@ namespace Triangulator.UI.Windows
             this.HeightGroupBox.Controls.Add(this.HeightMinNumericUpDown);
             this.HeightGroupBox.Controls.Add(this.HeightMinYLabel);
             this.HeightGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeightGroupBox.Location = new System.Drawing.Point(3, 324);
+            this.HeightGroupBox.Location = new System.Drawing.Point(3, 316);
             this.HeightGroupBox.Name = "HeightGroupBox";
             this.HeightGroupBox.Size = new System.Drawing.Size(246, 73);
             this.HeightGroupBox.TabIndex = 3;
@@ -563,7 +565,7 @@ namespace Triangulator.UI.Windows
             this.ScaleGroupBox.Controls.Add(this.ScaleXNumericUpDown);
             this.ScaleGroupBox.Controls.Add(this.ScaleXLabel);
             this.ScaleGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ScaleGroupBox.Location = new System.Drawing.Point(3, 247);
+            this.ScaleGroupBox.Location = new System.Drawing.Point(3, 239);
             this.ScaleGroupBox.Name = "ScaleGroupBox";
             this.ScaleGroupBox.Size = new System.Drawing.Size(246, 77);
             this.ScaleGroupBox.TabIndex = 3;
@@ -673,7 +675,7 @@ namespace Triangulator.UI.Windows
             this.OffsetGroupBox.Controls.Add(this.OffsetXNumericUpDown);
             this.OffsetGroupBox.Controls.Add(this.OffsetXLabel);
             this.OffsetGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OffsetGroupBox.Location = new System.Drawing.Point(3, 174);
+            this.OffsetGroupBox.Location = new System.Drawing.Point(3, 166);
             this.OffsetGroupBox.Name = "OffsetGroupBox";
             this.OffsetGroupBox.Size = new System.Drawing.Size(246, 73);
             this.OffsetGroupBox.TabIndex = 4;
@@ -776,10 +778,29 @@ namespace Triangulator.UI.Windows
             this.RotationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.RotationGroupBox.Location = new System.Drawing.Point(3, 68);
             this.RotationGroupBox.Name = "RotationGroupBox";
-            this.RotationGroupBox.Size = new System.Drawing.Size(246, 106);
+            this.RotationGroupBox.Size = new System.Drawing.Size(246, 98);
             this.RotationGroupBox.TabIndex = 1;
             this.RotationGroupBox.TabStop = false;
             this.RotationGroupBox.Text = "Rotation";
+            // 
+            // FillColorLabel
+            // 
+            this.FillColorLabel.AutoSize = true;
+            this.FillColorLabel.Location = new System.Drawing.Point(6, 76);
+            this.FillColorLabel.Name = "FillColorLabel";
+            this.FillColorLabel.Size = new System.Drawing.Size(46, 13);
+            this.FillColorLabel.TabIndex = 11;
+            this.FillColorLabel.Text = "Fill Color";
+            // 
+            // FillColorPictureBox
+            // 
+            this.FillColorPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FillColorPictureBox.Location = new System.Drawing.Point(164, 72);
+            this.FillColorPictureBox.Name = "FillColorPictureBox";
+            this.FillColorPictureBox.Size = new System.Drawing.Size(76, 20);
+            this.FillColorPictureBox.TabIndex = 10;
+            this.FillColorPictureBox.TabStop = false;
+            this.FillColorPictureBox.Click += new System.EventHandler(this.FillColorPictureBoxClick);
             // 
             // AngleDegreeLabel
             // 
@@ -805,9 +826,9 @@ namespace Triangulator.UI.Windows
             this.FlipLabel.AutoSize = true;
             this.FlipLabel.Location = new System.Drawing.Point(6, 48);
             this.FlipLabel.Name = "FlipLabel";
-            this.FlipLabel.Size = new System.Drawing.Size(23, 13);
+            this.FlipLabel.Size = new System.Drawing.Size(50, 13);
             this.FlipLabel.TabIndex = 2;
-            this.FlipLabel.Text = "Flip";
+            this.FlipLabel.Text = "Flip Type";
             // 
             // AngleNumericUpDown
             // 
@@ -1388,24 +1409,14 @@ namespace Triangulator.UI.Windows
             this.MainColorDialog.AnyColor = true;
             this.MainColorDialog.FullOpen = true;
             // 
-            // FillColorLabel
+            // SplitLabel
             // 
-            this.FillColorLabel.AutoSize = true;
-            this.FillColorLabel.Location = new System.Drawing.Point(6, 81);
-            this.FillColorLabel.Name = "FillColorLabel";
-            this.FillColorLabel.Size = new System.Drawing.Size(46, 13);
-            this.FillColorLabel.TabIndex = 11;
-            this.FillColorLabel.Text = "Fill Color";
-            // 
-            // FillColorPictureBox
-            // 
-            this.FillColorPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FillColorPictureBox.Location = new System.Drawing.Point(164, 72);
-            this.FillColorPictureBox.Name = "FillColorPictureBox";
-            this.FillColorPictureBox.Size = new System.Drawing.Size(76, 25);
-            this.FillColorPictureBox.TabIndex = 10;
-            this.FillColorPictureBox.TabStop = false;
-            this.FillColorPictureBox.Click += new System.EventHandler(this.FillColorPictureBoxClick);
+            this.SplitLabel.AutoSize = true;
+            this.SplitLabel.Location = new System.Drawing.Point(6, 22);
+            this.SplitLabel.Name = "SplitLabel";
+            this.SplitLabel.Size = new System.Drawing.Size(54, 13);
+            this.SplitLabel.TabIndex = 12;
+            this.SplitLabel.Text = "Split Type";
             // 
             // MainWindow
             // 
@@ -1449,6 +1460,7 @@ namespace Triangulator.UI.Windows
             ((System.ComponentModel.ISupportInitialize)(this.OffsetXNumericUpDown)).EndInit();
             this.RotationGroupBox.ResumeLayout(false);
             this.RotationGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FillColorPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AngleNumericUpDown)).EndInit();
             this.ColorsGoupBox.ResumeLayout(false);
             this.ColorsGoupBox.PerformLayout();
@@ -1475,7 +1487,6 @@ namespace Triangulator.UI.Windows
             ((System.ComponentModel.ISupportInitialize)(this.PreviewImagePictureBox)).EndInit();
             this.PreviewImageToolStrip.ResumeLayout(false);
             this.PreviewImageToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FillColorPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1597,6 +1608,7 @@ namespace Triangulator.UI.Windows
         private System.Windows.Forms.Label ModifiedImageDarkestLabel;
         private System.Windows.Forms.Label FillColorLabel;
         private System.Windows.Forms.PictureBox FillColorPictureBox;
+        private System.Windows.Forms.Label SplitLabel;
     }
 }
 
