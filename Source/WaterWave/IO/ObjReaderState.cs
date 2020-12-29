@@ -27,6 +27,7 @@ SOFTWARE.
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WaterWave.Approximations;
 using WaterWave.Enums;
 
 namespace WaterWave.IO
@@ -45,7 +46,7 @@ namespace WaterWave.IO
 
         public virtual float[] BasicMatrixV { get; set; }
 
-        public virtual IObjApproximationTechnique CurveApproximationTechnique { get; set; }
+        public virtual IApproximationTechnique CurveApproximationTechnique { get; set; }
 
         public virtual int DegreeU { get; set; }
 
@@ -87,7 +88,7 @@ namespace WaterWave.IO
 
         public virtual float StepV { get; set; }
 
-        public virtual IObjApproximationTechnique SurfaceApproximationTechnique { get; set; }
+        public virtual IApproximationTechnique SurfaceApproximationTechnique { get; set; }
 
         protected virtual ILineReader Reader { get; set; }
 

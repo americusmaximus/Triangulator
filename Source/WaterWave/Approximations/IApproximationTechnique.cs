@@ -24,9 +24,9 @@ SOFTWARE.
 */
 #endregion
 
-namespace WaterWave
+namespace WaterWave.Approximations
 {
-    public interface IObjApproximationTechnique
+    public interface IApproximationTechnique
     {
     }
 }

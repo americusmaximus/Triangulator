@@ -5,7 +5,7 @@
 		<Authors>Americus Maximus</Authors>
 		<Copyright>Americus Maximus</Copyright>
 		<Nullable>disable</Nullable>
-		<Version>1.0.0.0</Version>
+		<Version>1.0.0.1</Version>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>WaterWave.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
@@ -32,9 +32,5 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<NoWarn>1701;1702</NoWarn>
 	</PropertyGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'net50' or '$(TargetFramework)' == 'netcoreapp3.1'">
-		<PackageReference Include="System.Drawing.Common" Version="5.0.0" />
-	</ItemGroup>
 
 </Project>

@@ -30,6 +30,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using WaterWave.Approximations;
 using WaterWave.Enums;
 using WaterWave.IO.Attributes;
 using WaterWave.IO.Enums;
@@ -67,7 +68,7 @@ namespace WaterWave.IO
             return obj;
         }
 
-        protected virtual IObjApproximationTechnique ApproximationTechnique(IObjReaderState state, ObjToken token, string[] values)
+        protected virtual IApproximationTechnique ApproximationTechnique(IObjReaderState state, ObjToken token, string[] values)
         {
             if (values.Length < 2) { throw new InvalidDataException(string.Format("The <{0}> statement must specify a technique. Line: {1}.", token, state.LineNumber)); }
 
@@ -80,35 +81,35 @@ namespace WaterWave.IO
                         if (values.Length < 3) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement must specify a value. Line: {2}.", token, approximationToken, state.LineNumber)); }
                         if (values.Length != 3) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement has too many values. Line: {2}.", token, approximationToken, state.LineNumber)); }
 
-                        return new ObjConstantParametricSubdivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture));
+                        return new ConstantParametricSubDivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture));
                     }
                 case ApproximationTechniqueToken.CParmA:
                     {
                         if (values.Length < 4) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement must specify a value. Line: {2}.", token, approximationToken, state.LineNumber)); }
                         if (values.Length != 4) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement has too many values. Line: {2}.", token, approximationToken, state.LineNumber)); }
 
-                        return new ObjConstantParametricSubdivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture), float.Parse(values[3], CultureInfo.InvariantCulture));
+                        return new ConstantParametricSubDivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture), float.Parse(values[3], CultureInfo.InvariantCulture));
                     }
                 case ApproximationTechniqueToken.CParmB:
                     {
                         if (values.Length < 3) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement must specify a value. Line: {2}.", token, approximationToken, state.LineNumber)); }
                         if (values.Length != 3) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement has too many values. Line: {2}.", token, approximationToken, state.LineNumber)); }
 
-                        return new ObjConstantParametricSubdivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture));
+                        return new ConstantParametricSubDivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture));
                     }
                 case ApproximationTechniqueToken.CSpace:
                     {
                         if (values.Length < 3) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement must specify a value. Line: {2}.", token, approximationToken, state.LineNumber)); }
                         if (values.Length != 3) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement has too many values. Line: {2}.", token, approximationToken, state.LineNumber)); }
 
-                        return new ObjConstantSpatialSubdivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture));
+                        return new ConstantSpatialSubDivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture));
                     }
                 case ApproximationTechniqueToken.Curv:
                     {
                         if (values.Length < 4) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement must specify a value. Line: {2}.", token, approximationToken, state.LineNumber)); }
                         if (values.Length != 4) { throw new InvalidDataException(string.Format("The <{0}> <{1}> statement has too many values. Line: {2}.", token, approximationToken, state.LineNumber)); }
 
-                        return new ObjCurvatureDependentSubdivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture), float.Parse(values[3], CultureInfo.InvariantCulture));
+                        return new CurvatureDependentSubDivisionTechnique(float.Parse(values[2], CultureInfo.InvariantCulture), float.Parse(values[3], CultureInfo.InvariantCulture));
                     }
             }
 

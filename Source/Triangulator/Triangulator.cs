@@ -34,7 +34,7 @@ namespace Triangulator
 {
     public class Triangulator
     {
-        public virtual Obj[][] Triangulate(Image image, TriangulatorRequest request)
+        public virtual Obj[][] Triangulate(Image image, Request request)
         {
             var parts = Split(Modify(image, request), request);
 
@@ -50,7 +50,7 @@ namespace Triangulator
                     var offsetX = request.OffsetX + x * (line[y].Image.Width - 1) * request.ScaleX;
                     var offsetZ = request.OffsetZ + y * (line[y].Image.Height - 1) * request.ScaleZ;
 
-                    objs[x][y] = TriangulateImage(line[y].Image, new TriangulatorRequest()
+                    objs[x][y] = TriangulateImage(line[y].Image, new Request()
                     {
                         IgnoreTransparent = request.IgnoreTransparent,
 
@@ -69,7 +69,7 @@ namespace Triangulator
             return objs;
         }
 
-        protected virtual Image Modify(Image image, TriangulatorRequest request)
+        protected virtual Image Modify(Image image, Request request)
         {
             var imageBox = new ImageBox.ImageBox(image).Statistics();
 
@@ -78,7 +78,7 @@ namespace Triangulator
                          .Flip(request.FlipType).Image;
         }
 
-        protected virtual SplitterResult[][] Split(Image image, TriangulatorRequest request)
+        protected virtual SplitterResult[][] Split(Image image, Request request)
         {
             if (image == default) { throw new ArgumentNullException(nameof(image)); }
 
@@ -97,7 +97,7 @@ namespace Triangulator
             });
         }
 
-        protected virtual Obj TriangulateImage(Image image, TriangulatorRequest request)
+        protected virtual Obj TriangulateImage(Image image, Request request)
         {
             if (image == default) { throw new ArgumentNullException(nameof(image)); }
             if (request == default) { throw new ArgumentNullException(nameof(request)); }

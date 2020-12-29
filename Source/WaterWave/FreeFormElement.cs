@@ -25,6 +25,7 @@ SOFTWARE.
 #endregion
 
 using System.Collections.Generic;
+using WaterWave.Approximations;
 using WaterWave.Enums;
 
 namespace WaterWave
@@ -45,7 +46,7 @@ namespace WaterWave
 
         public virtual float[] BasicMatrixV { get; set; }
 
-        public virtual IObjApproximationTechnique CurveApproximationTechnique { get; set; }
+        public virtual IApproximationTechnique CurveApproximationTechnique { get; set; }
 
         public virtual int DegreeU { get; set; }
 
@@ -69,7 +70,7 @@ namespace WaterWave
 
         public virtual float StepV { get; set; }
 
-        public virtual IObjApproximationTechnique SurfaceApproximationTechnique { get; set; }
+        public virtual IApproximationTechnique SurfaceApproximationTechnique { get; set; }
 
         public virtual IList<float> U { get; protected set; }
 

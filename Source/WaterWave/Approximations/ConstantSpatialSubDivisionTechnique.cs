@@ -24,22 +24,17 @@ SOFTWARE.
 */
 #endregion
 
-namespace WaterWave
+namespace WaterWave.Approximations
 {
-    public class ObjCurvatureDependentSubdivisionTechnique : IObjApproximationTechnique
+    public class ConstantSpatialSubDivisionTechnique : IApproximationTechnique
     {
-        public ObjCurvatureDependentSubdivisionTechnique()
+        public ConstantSpatialSubDivisionTechnique() { }
+
+        public ConstantSpatialSubDivisionTechnique(float length)
         {
+            MaximumLength = length;
         }
 
-        public ObjCurvatureDependentSubdivisionTechnique(float distance, float angle)
-        {
-            MaximumDistance = distance;
-            MaximumAngle = angle;
-        }
-
-        public float MaximumDistance { get; set; }
-
-        public float MaximumAngle { get; set; }
+        public virtual float MaximumLength { get; set; }
     }
 }

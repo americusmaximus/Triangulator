@@ -28,6 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using WaterWave.Approximations;
 using WaterWave.Enums;
 
 namespace WaterWave.IO
@@ -198,28 +199,28 @@ namespace WaterWave.IO
 
             if (element.CurveApproximationTechnique != default)
             {
-                if (element.CurveApproximationTechnique is ObjConstantParametricSubdivisionTechnique)
+                if (element.CurveApproximationTechnique is ConstantParametricSubDivisionTechnique)
                 {
-                    var technique = (ObjConstantParametricSubdivisionTechnique)element.CurveApproximationTechnique;
+                    var technique = (ConstantParametricSubDivisionTechnique)element.CurveApproximationTechnique;
                     writer.WriteLine("ctech cparm {0}", technique.ResolutionU.ToString("F6", CultureInfo.InvariantCulture));
                 }
-                else if (element.CurveApproximationTechnique is ObjConstantSpatialSubdivisionTechnique)
+                else if (element.CurveApproximationTechnique is ConstantSpatialSubDivisionTechnique)
                 {
-                    var technique = (ObjConstantSpatialSubdivisionTechnique)element.CurveApproximationTechnique;
+                    var technique = (ConstantSpatialSubDivisionTechnique)element.CurveApproximationTechnique;
                     writer.WriteLine("ctech cspace {0}", technique.MaximumLength.ToString("F6", CultureInfo.InvariantCulture));
                 }
-                else if (element.CurveApproximationTechnique is ObjCurvatureDependentSubdivisionTechnique)
+                else if (element.CurveApproximationTechnique is CurvatureDependentSubDivisionTechnique)
                 {
-                    var technique = (ObjCurvatureDependentSubdivisionTechnique)element.CurveApproximationTechnique;
+                    var technique = (CurvatureDependentSubDivisionTechnique)element.CurveApproximationTechnique;
                     writer.WriteLine("ctech curv {0} {1}", technique.MaximumDistance.ToString("F6", CultureInfo.InvariantCulture), technique.MaximumAngle.ToString("F6", CultureInfo.InvariantCulture));
                 }
             }
 
             if (element.SurfaceApproximationTechnique != default)
             {
-                if (element.SurfaceApproximationTechnique is ObjConstantParametricSubdivisionTechnique)
+                if (element.SurfaceApproximationTechnique is ConstantParametricSubDivisionTechnique)
                 {
-                    var technique = (ObjConstantParametricSubdivisionTechnique)element.SurfaceApproximationTechnique;
+                    var technique = (ConstantParametricSubDivisionTechnique)element.SurfaceApproximationTechnique;
 
                     if (technique.ResolutionU == technique.ResolutionV)
                     {
@@ -230,14 +231,14 @@ namespace WaterWave.IO
                         writer.WriteLine("stech cparma {0} {1}", technique.ResolutionU.ToString("F6", CultureInfo.InvariantCulture), technique.ResolutionV.ToString("F6", CultureInfo.InvariantCulture));
                     }
                 }
-                else if (element.SurfaceApproximationTechnique is ObjConstantSpatialSubdivisionTechnique)
+                else if (element.SurfaceApproximationTechnique is ConstantSpatialSubDivisionTechnique)
                 {
-                    var technique = (ObjConstantSpatialSubdivisionTechnique)element.SurfaceApproximationTechnique;
+                    var technique = (ConstantSpatialSubDivisionTechnique)element.SurfaceApproximationTechnique;
                     writer.WriteLine("stech cspace {0}", technique.MaximumLength.ToString("F6", CultureInfo.InvariantCulture));
                 }
-                else if (element.SurfaceApproximationTechnique is ObjCurvatureDependentSubdivisionTechnique)
+                else if (element.SurfaceApproximationTechnique is CurvatureDependentSubDivisionTechnique)
                 {
-                    var technique = (ObjCurvatureDependentSubdivisionTechnique)element.SurfaceApproximationTechnique;
+                    var technique = (CurvatureDependentSubDivisionTechnique)element.SurfaceApproximationTechnique;
                     writer.WriteLine("stech curv {0} {1}", technique.MaximumDistance.ToString("F6", CultureInfo.InvariantCulture), technique.MaximumAngle.ToString("F6", CultureInfo.InvariantCulture));
                 }
             }

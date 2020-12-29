@@ -142,7 +142,7 @@ namespace Triangulator.CLI
             }
 
             // Load configuration file, if applicable
-            var config = default(TriangulatorRequest);
+            var config = default(Request);
 
             if (parameters.Any(a => a.ToLowerInvariant().StartsWith("c=")) || parameters.Any(a => a.ToLowerInvariant().StartsWith("config=")))
             {
@@ -180,7 +180,7 @@ namespace Triangulator.CLI
                     }
 
                     var json = File.ReadAllText(normalizedPath, Encoding.UTF8);
-                    config = JsonConvert.DeserializeObject<TriangulatorRequest>(json);
+                    config = JsonConvert.DeserializeObject<Request>(json);
 
                     if (config == default)
                     {
@@ -201,7 +201,7 @@ namespace Triangulator.CLI
             // Create default configuration, if needed
             if (config == default)
             {
-                config = new TriangulatorRequest();
+                config = new Request();
             }
 
             // Image
@@ -534,7 +534,7 @@ namespace Triangulator.CLI
             return property != default;
         }
 
-        private static int Execute(Image image, TriangulatorRequest config, string output)
+        private static int Execute(Image image, Request config, string output)
         {
             try
             {

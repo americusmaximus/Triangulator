@@ -31,9 +31,9 @@ using System.Drawing;
 
 namespace Triangulator
 {
-    public class TriangulatorRequest
+    public class Request
     {
-        public TriangulatorRequest()
+        public Request()
         {
             Color = Color.Transparent;
 

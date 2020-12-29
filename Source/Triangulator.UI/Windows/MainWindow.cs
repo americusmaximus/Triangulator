@@ -201,7 +201,7 @@ namespace Triangulator.UI.Windows
 
         protected virtual void ExportConfigurationToolStripMenuItemClick(object sender, EventArgs e)
         {
-            var conf = new TriangulatorRequest()
+            var conf = new Request()
             {
                 IgnoreTransparent = IgnoreTransparentCheckBox.Checked,
 
@@ -267,7 +267,7 @@ namespace Triangulator.UI.Windows
             {
                 try
                 {
-                    var conf = JsonConvert.DeserializeObject<TriangulatorRequest>(File.ReadAllText(ConfigurationOpenFileDialog.FileName, Encoding.UTF8));
+                    var conf = JsonConvert.DeserializeObject<Request>(File.ReadAllText(ConfigurationOpenFileDialog.FileName, Encoding.UTF8));
 
                     IsAutomaticChange = true;
 
@@ -867,7 +867,7 @@ namespace Triangulator.UI.Windows
 
             try
             {
-                var objs = triangulator.Triangulate(image, new TriangulatorRequest()
+                var objs = triangulator.Triangulate(image, new Request()
                 {
                     IgnoreTransparent = IgnoreTransparentCheckBox.Checked,
 
