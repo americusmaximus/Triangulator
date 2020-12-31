@@ -103,7 +103,7 @@ namespace Triangulator.CLI
             if (parameters.Any(a => a.ToLowerInvariant() == "v") || parameters.Any(a => a.ToLowerInvariant() == "version"))
             {
                 Console.WriteLine(string.Format("Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString()));
-				
+                
                 return 0;
             }
 
